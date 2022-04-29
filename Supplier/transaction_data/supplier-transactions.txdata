@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "supplierExists",
+        "transactionLabel": "A test supplierExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createSupplier",
+        "transactionLabel": "A test createSupplier transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readSupplier",
+        "transactionLabel": "A test readSupplier transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateSupplier",
+        "transactionLabel": "A test updateSupplier transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteSupplier",
+        "transactionLabel": "A test deleteSupplier transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]

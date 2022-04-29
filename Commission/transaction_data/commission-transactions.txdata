@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "commissionExists",
+        "transactionLabel": "A test commissionExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createCommission",
+        "transactionLabel": "A test createCommission transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readCommission",
+        "transactionLabel": "A test readCommission transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateCommission",
+        "transactionLabel": "A test updateCommission transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteCommission",
+        "transactionLabel": "A test deleteCommission transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]

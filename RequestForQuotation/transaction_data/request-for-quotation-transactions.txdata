@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "requestForQuotationExists",
+        "transactionLabel": "A test requestForQuotationExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createRequestForQuotation",
+        "transactionLabel": "A test createRequestForQuotation transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readRequestForQuotation",
+        "transactionLabel": "A test readRequestForQuotation transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateRequestForQuotation",
+        "transactionLabel": "A test updateRequestForQuotation transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteRequestForQuotation",
+        "transactionLabel": "A test deleteRequestForQuotation transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]
