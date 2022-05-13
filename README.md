@@ -8,4 +8,6 @@ Current development of three classes:
 
 2- Commission: class relating to the commission of the tender requested by a customer.
 
-3-RfQ (requestForQuotation): class relating to a supplier's proposal for a specific commission from a customer.
+3- RfQ (requestForQuotation): class relating to a supplier's proposal for a specific commission from a customer.
+
+4- PO(purchase order)

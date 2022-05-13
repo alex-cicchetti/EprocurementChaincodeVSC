@@ -32,7 +32,7 @@ import java.util.List;
 public class SupplierContract implements ContractInterface {
 
     public SupplierContract(){}
-
+    
     private final Genson genson = new Genson();
 
     private enum SupplierError{
@@ -64,6 +64,7 @@ public class SupplierContract implements ContractInterface {
         
         return supplier;
     }
+
 
     // Update supplier state, it could be accepted or rejected
     @Transaction(intent = Transaction.TYPE.SUBMIT)
@@ -259,4 +260,5 @@ public class SupplierContract implements ContractInterface {
         }
         return ck.toString();
     }
+
 }
