@@ -13,9 +13,6 @@ import java.util.Objects;
 @DataType()
 public class Commission {
 
-    //@Property()
-    // private final String commissionID;
-
     @Property()
     private  String customer;
 
