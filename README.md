@@ -2,7 +2,7 @@
 java application for the management of competitions.
 Application development on VSC, necessary to run Docker and IBM Blockchain extension
 
-Current development of three classes:
+Current development of four classes:
 
 1- Supplier: class with the supplier data necessary to check entry to the tender.
 
