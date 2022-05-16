@@ -11,9 +11,14 @@ import org.hyperledger.fabric.contract.annotation.Transaction;
 import org.hyperledger.fabric.shim.ChaincodeException;
 import org.hyperledger.fabric.shim.ChaincodeStub;
 import org.hyperledger.fabric.shim.ledger.CompositeKey;
+import org.hyperledger.fabric.shim.ledger.KeyModification;
+import org.hyperledger.fabric.shim.ledger.QueryResultsIterator;
 import org.hyperledger.fabric.contract.annotation.Contact;
 import org.hyperledger.fabric.contract.annotation.Info;
 import org.hyperledger.fabric.contract.annotation.License;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.owlike.genson.Genson;
 
@@ -115,6 +120,37 @@ public class PoContract implements ContractInterface{
         return purchaseOrderPo; 
     
     }
+
+
+    @Transaction(intent = Transaction.TYPE.EVALUATE)
+    public String getPoHistory(final Context ctx, final String poID) {
+
+        if(poID == null){
+            throw new RuntimeException("No ID given");
+        }
+
+        ChaincodeStub stub = ctx.getStub();
+        List<PoHistoryDetails> historyPo = new ArrayList<>();
+        String poKey=getPoKey(ctx,poID);
+
+        QueryResultsIterator<KeyModification> resultsIterator = stub.getHistoryForKey(poKey);
+
+        for (KeyModification history: resultsIterator) {
+
+            String poValue = history.getStringValue();
+            String txId=history.getTxId();
+            String timestamp=history.getTimestamp().toString();
+       
+
+            PoHistoryDetails commissionHistoryDetail=new PoHistoryDetails(poValue,txId,timestamp); 
+
+            historyPo.add(commissionHistoryDetail);
+
+            System.out.println("QUA CE LA HISTORY");
+            System.out.println(historyPo);
+        }
+    return historyPo.toString();
+}
 
     @Transaction(intent = Transaction.TYPE.EVALUATE)
     public boolean poExists(Context ctx, String poKey){
