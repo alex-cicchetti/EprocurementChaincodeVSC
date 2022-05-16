@@ -79,7 +79,11 @@ public class Commission {
         if (this == o) return true;
         if (!(o instanceof Commission)) return false;
         Commission that = (Commission) o;
-        return Objects.equals(getCustomer(), that.getCustomer()) && Objects.equals(getType(), that.getType()) && Objects.equals(getOpeningDate(), that.getOpeningDate()) && Objects.equals(getState(), that.getState()) && Objects.equals(getEquipmentList(), that.getEquipmentList());
+        return Objects.equals(getCustomer(), that.getCustomer()) 
+            && Objects.equals(getType(), that.getType())
+            && Objects.equals(getOpeningDate(), that.getOpeningDate())
+            && Objects.equals(getState(), that.getState())
+            && Objects.equals(getEquipmentList(), that.getEquipmentList());
     }
 
     @Override
