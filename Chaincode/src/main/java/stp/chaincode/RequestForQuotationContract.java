@@ -77,7 +77,7 @@ public class RequestForQuotationContract implements ContractInterface {
         String RFQKey = getRFQKey(ctx, requestForQuotationId);
         String rfqJSON= stub.getStringState(RFQKey);
 
-        if(requestForQuotationExists(ctx, RFQKey)){
+        if(!requestForQuotationExists(ctx, RFQKey)){
             String errorMessage = String.format("Rfq %s does not exist.", requestForQuotationId);
             System.err.println(errorMessage);
             throw new ChaincodeException(errorMessage,RfqError.RFQ_NOT_FOUND.toString());
