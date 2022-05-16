@@ -16,16 +16,12 @@ public class Po {
 
     @Property()
     private String commissionID;
-
     @Property()
     private String customer;
-    
     @Property()
     private String material;
-
     @Property()
     private String awardedSupplier;
-
     @Property()
     private String state;
 
@@ -41,8 +37,7 @@ public class Po {
     this.state= "Created";
               }
 
-    public Po(){
-    }
+    public Po(){}
 
     
     public String getCommissionID() {
