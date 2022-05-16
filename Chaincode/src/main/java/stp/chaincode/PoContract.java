@@ -40,7 +40,7 @@ public class PoContract implements ContractInterface{
         PO_ALREADY_EXIST,
         PO_ALREADY_EVALUATED,
         //COMMISSIONID_INSERT_ERROR,
-        //PO_INVALID_STATE, 
+        PO_INVALID_STATE, 
     }
 
 
@@ -103,6 +103,11 @@ public class PoContract implements ContractInterface{
                 System.out.println(errorMessage);
             throw new ChaincodeException(errorMessage, PoError.PO_ALREADY_EVALUATED.toString());
             }
+            if(!newState.toLowerCase().equals("accepted")){
+                String errorMessage= String.format("Invalid state input.");
+                System.out.println(errorMessage);
+            throw new ChaincodeException(errorMessage,PoError.PO_INVALID_STATE.toString());
+            }
 
             purchaseOrderPo.setState(newState.toLowerCase());
             String updatedPoJSON = genson.serialize(purchaseOrderPo);
@@ -131,63 +136,5 @@ public class PoContract implements ContractInterface{
         return ck.toString();
     }
 
-
-   
-    }
-
-
-
-
-    /*============================AutoGenerateCodeFromIBMExtension===============================
-    
-    @Transaction()
-    public boolean poExists(Context ctx, String poId) {
-        byte[] buffer = ctx.getStub().getState(poId);
-        return (buffer != null && buffer.length > 0);
-    }
-
-    @Transaction()
-    public void createPo(Context ctx, String poId, String value) {
-        boolean exists = poExists(ctx,poId);
-        if (exists) {
-            throw new RuntimeException("The asset "+poId+" already exists");
-        }
-        Po asset = new Po();
-        asset.setValue(value);
-        ctx.getStub().putState(poId, asset.toJSONString().getBytes(UTF_8));
-    }
-
-    @Transaction()
-    public Po readPo(Context ctx, String poId) {
-        boolean exists = poExists(ctx,poId);
-        if (!exists) {
-            throw new RuntimeException("The asset "+poId+" does not exist");
-        }
-
-        Po newAsset = Po.fromJSONString(new String(ctx.getStub().getState(poId),UTF_8));
-        return newAsset;
-    }
-
-    @Transaction()
-    public void updatePo(Context ctx, String poId, String newValue) {
-        boolean exists = poExists(ctx,poId);
-        if (!exists) {
-            throw new RuntimeException("The asset "+poId+" does not exist");
-        }
-        Po asset = new Po();
-        asset.setValue(newValue);
-
-        ctx.getStub().putState(poId, asset.toJSONString().getBytes(UTF_8));
-    }
-
-    @Transaction()
-    public void deletePo(Context ctx, String poId) {
-        boolean exists = poExists(ctx,poId);
-        if (!exists) {
-            throw new RuntimeException("The asset "+poId+" does not exist");
-        }
-        ctx.getStub().delState(poId);
-    }
-    */
-
+}
 
