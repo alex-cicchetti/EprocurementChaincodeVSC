@@ -42,10 +42,10 @@ public class RequestForQuotationContract implements ContractInterface {
     //TODO aggiungere updateRFQDocs chiedere specifiche sui docs vedere gitMatteo
 
 
-    //TODO aggiungere updateRfqBidderList
+    //TODO aggiungere updateRfqBidderList / lista dei supplier-controlli o stringa semplice
 
     
-    //TODO aggiungere updateRfqValidation 
+    //TODO aggiungere updateRfqValidation vedi documento condiviso
 
     private enum RfqError{
         RFQ_NOT_FOUND,
