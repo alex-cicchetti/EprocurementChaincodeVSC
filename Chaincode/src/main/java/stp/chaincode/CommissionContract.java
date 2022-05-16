@@ -192,8 +192,4 @@ public class CommissionContract implements ContractInterface {
         return ck.toString();
     }
 
-    //============================================
-    //devo aggiungere la CommissionHistory
-    //============================================
-
 }
