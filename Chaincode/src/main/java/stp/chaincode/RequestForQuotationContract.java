@@ -39,15 +39,13 @@ public class RequestForQuotationContract implements ContractInterface {
 
     private final Genson genson = new Genson();
 
-    /*==================================================
-    chiamate da aggiungere al contract 
+    //TODO aggiungere updateRFQDocs chiedere specifiche sui docs vedere gitMatteo
 
-    updateRFQDocs
-    updateRfqBidderList 
-    updateRfqValidation 
+
+    //TODO aggiungere updateRfqBidderList
+
     
-    
-    ====================================================*/
+    //TODO aggiungere updateRfqValidation 
 
     private enum RfqError{
         RFQ_NOT_FOUND,

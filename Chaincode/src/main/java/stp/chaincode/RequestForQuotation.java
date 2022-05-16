@@ -14,19 +14,15 @@ import com.owlike.genson.annotation.JsonProperty;
 @DataType()
 public class RequestForQuotation {
 
-    //rfqID,customer, material,vendorList
-
+    
     @Property()
     private String customer;
     @Property()
     private String material;
     @Property()
     private String vendorList;
-
-    //need to check if bidderlist has an init value or different
     @Property()
     private String bidderList;
-    //============================================================
     @Property()
     private String state;
 
@@ -89,8 +85,11 @@ public class RequestForQuotation {
         if (this == o) return true;
         if (!(o instanceof RequestForQuotation)) return false;
         RequestForQuotation that = (RequestForQuotation) o;
-        return Objects.equals(getCustomer(), that.getCustomer()) && Objects.equals(getMaterial(), that.getMaterial()) && Objects.equals(getVendorList(),
-                             that.getVendorList()) && Objects.equals(getState(), that.getState()) && Objects.equals(getBidderList(), that.getBidderList());
+        return Objects.equals(getCustomer(), that.getCustomer()) 
+            && Objects.equals(getMaterial(), that.getMaterial()) 
+            && Objects.equals(getVendorList(), that.getVendorList()) 
+            && Objects.equals(getState(), that.getState()) 
+            && Objects.equals(getBidderList(), that.getBidderList());
     }
 
     @Override
