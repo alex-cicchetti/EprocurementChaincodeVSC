@@ -29,9 +29,9 @@ import com.owlike.genson.Genson;
                 license =
                         @License(name = "Apache-2.0",
                                 url = ""),
-                                contact =  @Contact(email = "RequestForQuotation@example.com",
-                                                name = "RequestForQuotation",
-                                                url = "http://RequestForQuotation.me")))
+                                contact =  @Contact(email = "Chaincode@example.com",
+                                                name = "Chaincode",
+                                                url = "http://Chaincode.me")))
 @Default
 public class RequestForQuotationContract implements ContractInterface {
 

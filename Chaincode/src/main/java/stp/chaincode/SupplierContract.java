@@ -19,15 +19,15 @@ import java.util.List;
 
 // === Fabric info for Contract====
 @Contract(name = "SupplierContract",
-    info = @Info(title = "STPSupplier contract",
-                description = "STP SmartContract Supplier",
+    info = @Info(title = "Supplier contract",
+                description = "My Smart Contract",
                 version = "0.0.1",
                 license =
                         @License(name = "Apache-2.0",
                                 url = ""),
-                                contact =  @Contact(email = "Supplier@example.com",
-                                                name = "Supplier",
-                                                url = "http://Supplier.me")))
+                                contact =  @Contact(email = "Chaincode@example.com",
+                                                name = "Chaincode",
+                                                url = "http://Chaincode.me")))
 @Default
 public class SupplierContract implements ContractInterface {
 

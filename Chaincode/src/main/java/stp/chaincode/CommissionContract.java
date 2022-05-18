@@ -19,15 +19,15 @@ import java.util.List;
 
 
 @Contract(name = "CommissionContract",
-    info = @Info(title = "STPCommission contract",
-                description = "Commission SmartContract",
+    info = @Info(title = "Commission contract",
+                description = "My Smart Contract",
                 version = "0.0.1",
                 license =
                         @License(name = "Apache-2.0",
                                 url = ""),
-                                contact =  @Contact(email = "Commission@example.com",
-                                                name = "Commission",
-                                                url = "http://Commission.me")))
+                                contact =  @Contact(email = "Chaincode@example.com",
+                                                name = "Chaincode",
+                                                url = "http://Chaincode.me")))
 @Default
 public class CommissionContract implements ContractInterface {
 

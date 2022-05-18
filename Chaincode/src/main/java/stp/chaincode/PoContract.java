@@ -24,15 +24,15 @@ import com.owlike.genson.Genson;
 
 
 @Contract(name = "PoContract",
-    info = @Info(title = "STPPO contract",
-                description = "PurchaseOrder SmartContract",
+    info = @Info(title = "PO contract",
+                description = "My Smart Contract",
                 version = "0.0.1",
                 license =
                         @License(name = "Apache-2.0",
                                 url = ""),
-                                contact =  @Contact(email = "chaincode@example.com",
-                                                name = "chaincode",
-                                                url = "http://chaincode.me")))
+                                contact =  @Contact(email = "Chaincode@example.com",
+                                                name = "Chaincode",
+                                                url = "http://Chaincode.me")))
 @Default
 public class PoContract implements ContractInterface{
 
