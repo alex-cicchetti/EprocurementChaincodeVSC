@@ -152,22 +152,6 @@ public class SupplierContract implements ContractInterface {
         return genson.deserialize(supplierJSON, Supplier.class);
     }
 
-    //================================================================
-    //
-    //fare funzioni su ogni parametro della key (couchdb + rich history) ,un setting diverso da mettere a Hyperledger Fabric
-    //
-    //================================================================
-
-    
-    /*
-    @Transaction(intent = Transaction.TYPE.EVALUATE)
-    public String retrieveAll(final Context ctx){
-        ChaincodeStub stub = ctx.getStub();
-
-    }
-    andare a vedere in futuro gli indici del couch-db per retrieve solo alcuni tipi di assetts
-    (rich history)
-     */
 
 
     // History of the supplier on the ledger
@@ -200,37 +184,6 @@ public class SupplierContract implements ContractInterface {
         }
         return historySupplier.toString();
     }
-
-    // @Transaction(intent = Transaction.TYPE.EVALUATE)
-    // public ArrayList<String> GetSupplierHistory(final Context ctx, final String supplierID) {
-    //     if(supplierID == null){
-    //         throw new RuntimeException("No ID given");
-    //     }
-    //     ChaincodeStub stub = ctx.getStub();
-    //     ArrayList<String> results = new ArrayList<>();
-
-    //     String supplierKey=getSupplierKey(ctx,supplierID);
-
-    //     try {
-    //         QueryResultsIterator<KeyModification> history = stub.getHistoryForKey(supplierKey);
-
-    //         if (history == null) {
-    //             String errorMessage = String.format("Supplier %s does not exist", supplierID);
-    //             System.out.println(errorMessage);
-    //             throw new ChaincodeException(errorMessage, SupplierError.SUPPLIER_NOT_FOUND.toString());
-    //         }
-    //         Iterator<KeyModification> iter = history.iterator();
-    //         while(iter.hasNext()){
-    //                 results.add(iter.next().getStringValue() + iter.next().getTxId() + );
-    //         }
-    //     }
-    //     catch(Exception e){
-    //         results.add(e.getMessage());
-    //         results.add(e.getCause().getMessage());
-    //         results.add(e.getStackTrace().toString());
-    //     }
-    //     return results;
-    // }
 
     //se necessario aggiungere la DELETE SUPPLIER
 
