@@ -12,6 +12,7 @@ import org.hyperledger.fabric.shim.ChaincodeStub;
 import org.hyperledger.fabric.contract.annotation.Contract;
 import org.hyperledger.fabric.contract.annotation.Transaction;
 import org.hyperledger.fabric.shim.ledger.KeyModification;
+import org.hyperledger.fabric.shim.ledger.KeyValue;
 import org.hyperledger.fabric.shim.ledger.QueryResultsIterator;
 import org.hyperledger.fabric.shim.ledger.CompositeKey;
 import java.util.ArrayList;
@@ -153,6 +154,33 @@ public class SupplierContract implements ContractInterface {
     }
 
 
+    //This read all the asset on the ledger
+    @Transaction(intent = Transaction.TYPE.EVALUATE)
+    public String getAllAssets(final Context ctx) {
+        ChaincodeStub stub = ctx.getStub();
+
+        List<Supplier> queryResults = new ArrayList<Supplier>();
+        // To retrieve all assets from the ledger use getStateByRange with empty startKey & endKey.
+        // Giving empty startKey & endKey is interpreted as all the keys from beginning to end.
+        // As another example, if you use startKey = 'asset0', endKey = 'asset9' ,
+        // then getStateByRange will retrieve asset with keys between asset0 (inclusive) and asset9 (exclusive) in lexical order.
+        QueryResultsIterator<KeyValue> results = stub.getStateByRange("", "");
+    
+
+        for (KeyValue result: results) {
+            
+            Supplier asset = genson.deserialize(result.getStringValue(), Supplier.class);
+            System.out.println(asset);
+            System.out.println("===================QUESTA E' LA KEY=============================");
+            System.out.println(result.getKey());
+            System.out.println("===================SOPRA TROVI LA KEY=======================");
+            queryResults.add(asset);
+        }
+
+        final String response = genson.serialize(queryResults);
+
+        return response;
+    }
 
     // History of the supplier on the ledger
     @Transaction(intent = Transaction.TYPE.EVALUATE)
@@ -185,7 +213,6 @@ public class SupplierContract implements ContractInterface {
         return historySupplier.toString();
     }
 
-    //se necessario aggiungere la DELETE SUPPLIER
 
     //SupplierExist on the ledger? 
     @Transaction(intent = Transaction.TYPE.EVALUATE)
