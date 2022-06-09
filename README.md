@@ -1,4 +1,4 @@
-# stpChaincode
+# Ep-Chaincode
 java application for the management of competitions.
 Application development on VSC, necessary to run Docker and IBM Blockchain extension
 
